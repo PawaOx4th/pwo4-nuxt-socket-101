@@ -9,6 +9,11 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+  server: {
+    port: 8080, // default: 3000
+    host: '0.0.0.0', // default: localhost
+  },
+
   env: {
     socketServer: process.env.SOCKET || 'http://localhost:4000',
   },
