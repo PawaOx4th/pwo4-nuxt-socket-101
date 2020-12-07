@@ -45,6 +45,7 @@ export default {
     }
   },
   mounted() {
+    console.log('ENV', process.env.socketServer)
     this.socket = this.$nuxtSocket({
       // nuxt-socket-io opts:
       // name: 'home', // Use socket "home"

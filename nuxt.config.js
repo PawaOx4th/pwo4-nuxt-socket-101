@@ -9,6 +9,9 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+  env: {
+    socketServer: process.env.SOCKET || 'http://localhost:4000',
+  },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
@@ -45,7 +48,7 @@ export default {
     sockets: [
       {
         default: true,
-        url: 'http://localhost:4000',
+        url: 'http://128.199.110.200/',
       },
     ],
   },
