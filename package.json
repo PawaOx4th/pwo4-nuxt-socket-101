@@ -21,6 +21,7 @@
     "vue-socket.io": "^3.0.10"
   },
   "devDependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@vue/test-utils": "^1.1.0",

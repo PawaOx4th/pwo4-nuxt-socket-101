@@ -47,13 +47,21 @@ export default {
 
     // https://www.npmjs.com/package/nuxt-socket-io
     'nuxt-socket-io',
+
+    // https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv',
   ],
+  // dotenv: [
+  //   /* module options */
+  //   { path: '@/.env' },
+  // ],
+
   io: {
     // module options
     sockets: [
       {
         default: true,
-        url: 'http://128.199.110.200/',
+        url: process.env.SOCKET_URL,
       },
     ],
   },
