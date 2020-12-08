@@ -61,7 +61,7 @@ export default {
     sockets: [
       {
         default: true,
-        url: process.env.SOCKET_URL,
+        url: "http://www.pwo4.online",
       },
     ],
   },
