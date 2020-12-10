@@ -4,38 +4,50 @@
       <Logo />
       <h1 class="title">pw04-nuxt-socket-101</h1>
       <div class="links">
-        <!-- <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a> -->
-        <!-- <a
-          href="/chat"
-          target="blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          Chat
-        </a> -->
         <b-button to="/chat" block variant="outline-primary">Chat</b-button>
       </div>
+      <hr />
+
+      <b-alert
+        v-for="(post, index) in posts"
+        :key="index"
+        variant="primary"
+        show
+      >
+        <nuxt-link :to="{ name: 'posts-id', params: { id: post.id } }">{{
+          post.id
+        }}</nuxt-link>
+      </b-alert>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      posts: '',
+    }
+  },
+  async mounted() {
+    const response = await this.$axios.$get(
+      'https://jsonplaceholder.typicode.com/posts'
+    )
+
+    this.posts = response
+  },
+  head() {
+    return {
+      title: 'Home Page 🍕',
+      meta: [
+        { name: 'twitter:title', content: 'Nuxt Async by Vue School' },
+        { name: 'twitter:description', content: 'Nuxt + Vue School = 🍕' },
+        { name: 'twitter:image', content: 'https://i.imgur.com/UYP2umJ.png' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+      ],
+    }
+  },
+}
 </script>
 
 <style>
